@@ -48,7 +48,8 @@ function createTemplate(data){
         </body>
         
         
-    </html>`
+    </html>`;
+    return template;
 
 }
 
@@ -60,7 +61,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/article_one',function (req,res){
-       res.sendFile(path.join(__dirname, 'ui', 'article_one.html'));
+       res.send(createTemplate(articleone));
 });
 
 app.get('/article_two',function (req,res){
